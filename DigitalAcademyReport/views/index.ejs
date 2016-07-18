@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Academy Report</title>
+<!-- <link rel="stylesheet" href="lib/bootstrap/css/font-awesome.css">
+<link rel="stylesheet" href="lib/bootstrap/css/bootstrap-glyphicons.css"> -->
+<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+ <link rel="stylesheet" href="stylesheets/style.css">
+<link rel="stylesheet" href="stylesheets/nav.css">
+<!-- <link rel="stylesheet" href="bubble.css"> -->
+<!-- <link rel="stylesheet" href="./css/flipclock.css"> -->
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+<script src="https://code.angularjs.org/1.4.8/angular.min.js"></script>
+<script src="https://code.angularjs.org/1.4.8/angular-animate.min.js"></script>
+<script src="https://code.angularjs.org/1.4.8/angular-aria.min.js"></script>
+<script src="https://code.angularjs.org/1.4.8/angular-messages.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.0/angular-material.min.js"></script>
+<script src="http://ngmaterial.assets.s3.amazonaws.com/svg-assets-cache.js"></script>
+<script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+  var sAgent = window.navigator.userAgent;
+  var Idx = sAgent.indexOf("MSIE");
+
+  // If IE, return version number.
+  if (Idx > 0)
+   alert("Please use Chrome or Firefox");
+
+  // If IE 11 then look for Updated user agent string.
+  else if (!!navigator.userAgent.match(/Trident\/7\./))
+    alert("Please use Chrome or Firefox");
+
+
+</script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js" charset="utf-8"></script>
+<script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+</head>
+<body data-spy="scroll" data-offset="80">
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="#" class="navbar-brand"><span>digital</span> academy</a>
+    </div>
+
+    <div class="navOptionsWrapper">
+      <div class="collapse navbar-collapse" id="navOptions">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="navItem">
+            <a href="#heroImage">home</a>
+          </li>
+          <li class="navItem about">
+            <a href="#aboutAcademy">about</a>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+  </head>
+  <body ng-app="MyApp">
+    <div class="containerPage">
+
+      <!-- body of the page goes here -->
+      <div class="carddemoCardActionButtons " >
+
+        <md-content class="md-padding" layout-xs="column" layout="row">
+          <div flex-xs flex-gt-xs="100" layout="row">
+            <md-card class="md-class-indicator x">
+              <md-card-title-media class="md-class-indicator_title">
+                <img src="images/Indicator1.png" class="md-class-indicator_img">
+              </md-card-title-media>
+
+              <md-card-title class="md-class-indicator_title">
+                <md-card-title-text>
+                  <span class="md-headline span_align md-button">Employee</span>
+                </md-card-title-text>
+              </md-card-title>
+            </md-card>
+            <md-card class="md-class-indicator">
+              <md-card-title-media class="md-class-indicator_title">
+                <img src="images/Indicator2.png"class="md-class-indicator_img">
+              </md-card-title-media>
+              <md-card-title class="md-class-indicator_title">
+                <md-card-title-text>
+                  <span class="md-headline span_align md-button">Trained</span>
+                </md-card-title-text>
+              </md-card-title>
+            </md-card>
+            <md-card class="md-class-indicator">
+              <md-card-title-media class="md-class-indicator_title">
+                <img src="images/Indicator3.png"class="md-class-indicator_img">
+              </md-card-title-media>
+              <md-card-title class="md-class-indicator_title">
+                <md-card-title-text>
+                  <span class="md-headline span_align md-button">Percentage</span>
+                </md-card-title-text>
+              </md-card-title>
+            </md-card>
+            <md-card class="md-class-indicator">
+              <md-card-title-media class="md-class-indicator_title">
+                <img src="images/Indicator4.png"class="md-class-indicator_img">
+              </md-card-title-media>
+              <md-card-title class="md-class-indicator_title">
+                <md-card-title-text>
+                  <span class="md-headline span_align md-button">BU</span>
+                </md-card-title-text>
+              </md-card-title>
+            </md-card>
+          </div>
+        </md-content>
+        </div>
+        <div ng-cloak>
+      <md-content>
+        <md-tabs md-dynamic-height md-border-bottom>
+          <md-tab label="one">
+            <md-content class="md-padding">
+              <canvas id="myChart1" style="display:block;max-width:700px"></canvas>
+              <div ng-controller="BarCtrl">
+              <div ng-init="chartPrint('myChart1')">
+              </div>
+              </div>
+            </md-content>
+          </md-tab>
+          <md-tab label="two">
+            <md-content class="md-padding">
+              <canvas id="myChart2" style="display:block;max-width:700px"></canvas>
+              <div ng-controller="doughnutCtrl">
+              <div ng-init="chartPrint('myChart2')">
+              </div>
+              </div>
+
+            </md-content>
+          </md-tab>
+          <md-tab label="three">
+            <md-content class="md-padding">
+              <canvas id="myChart3" style="display:block;max-width:700px"></canvas>
+              <div ng-controller="pieCtrl">
+              <div ng-init="chartPrint('myChart3')">
+              </div>
+              </div>
+            </md-content>
+          </md-tab>
+        </md-tabs>
+      </md-content>
+    </div>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+              </div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.js" charset="utf-8"></script>
+<script src="/javascripts/testgraph.js"></script>
+<script src="/javascripts/geomap.js"></script>
+<script src="/lib/js/geomap.js"></script>
+  </body>
+</html>
